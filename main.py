@@ -12,9 +12,11 @@ ENTRY = (
     "tonight you typed nothing, so this is the last line I will ever write you."
 )
 
+ENTRY_MAX_LEN = 200
+
 
 def main() -> None:
-    assert 1 <= len(ENTRY) <= 200, "entry must be 1-200 characters"
+    assert 1 <= len(ENTRY) <= ENTRY_MAX_LEN, "entry must be 1-200 characters"
     assert ENTRY.strip(), "entry must not be only whitespace"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
